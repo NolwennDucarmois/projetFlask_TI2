@@ -1,8 +1,6 @@
-# ce fichier sert un lancer l'application
+# ce fichier sert à lancer l'application
 
-from flask import Flask
-
-app = Flask(__name__)
+from . import app
 
 if __name__ == '__main__':
     app.run()

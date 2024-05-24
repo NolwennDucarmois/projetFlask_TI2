@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- url_for : pour récupérer le chemin d'accès -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>{{ title }}</title>
+</head>
+<body>
+<!-- ici que s'affiche les données repris par jinja2-->
+<div class="contenu">
+    {% include 'menu.html' %}
+    {% block content %}
+    {% endblock content%}
+</div>
+</body>
+</html>

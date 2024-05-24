@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h2>Instruments de musique</h2>
+    <!--<pre>
+    {{ liste_instru }}
+    </pre>-->
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for instru in liste_instru %}
+            <div class="col">
+                <div class="card">
+                    <img src="/static/images/{{ instru.image_instrument }}" class="card-img-top" alt="{{instru.nom_instrument}}" id="img">
+                    <div class="card-body">
+                        <h5 class="card-title" id="nom">{{ instru.nom_instrument }}</h5>
+                        <p class="card-text">
+                            {{ instru.nom_marque }}
+                        </p>
+                        <button>Plus d'infos</button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
