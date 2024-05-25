@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <button class="btn"><a href="{{ url_for('instruments') }}" id="lienRetour">Retour</a></button>
+        <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="/static/images/{{ infos[0].image_instrument }}" alt="{{ infos[0].reference_instrument }}"
+                     title="{{ infos[0].nom_instrument }}" id="image_instrument_aff">
+            </div>
+            <div class="col-md-6">
+                <h3 id="nom_instrument_aff">{{ infos[0].nom_instrument }}</h3>
+                <br>
+                <div id="reference_div">
+                    <span id="reference_instrument_aff">Référence :</span>
+                    <span id="reference_instrument_infos">{{ infos[0].reference_instrument }}</span>
+                </div>
+                <div id="marque_div">
+                    <span id="marque_instrument_aff">Marque :</span>
+                    <span id="marque_instrument_infos">{{ infos[0].nom_marque }}</span>
+                </div>
+                <div id="categorie_div">
+                    <span id="categorie_instrument_aff">Catégorie :</span>
+                    <span id="categorie_instrument_infos">{{ infos[0].nom_categorie }}</span>
+                </div>
+                <div id="couleur_div">
+                    <span id="couleur_instrument_aff">Couleur :</span>
+                    <span id="couleur_instrument_infos">{{ infos[0].couleur_instrument }}</span>
+                </div>
+                <br>
+                <p id="prix_instrument_aff">{{ infos[0].prix_instrument }}€</p>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,5 +1,33 @@
 {% extends 'layout.html' %}
 {% block content %}
-    <h2>Accueil</h2>
-    <button class="btn btn-outline-success">Test</button>
-{% endblock content%}
+    <h2 id="titrePage">Accueil</h2>
+    <p id="intro">
+        SITE FLASK sur les instruments
+    </p>
+    <button class="btn btn-outline-success" id="btnTest">Couleur</button>
+    <br><br>
+    <!-- j'ai fait mon carrousel moi-même car avec bootstrap il ne fonctionnait pas-->
+
+    <div class="container text-center" id="carousel">
+        <div class="row" id="gridCarrousel">
+            <div class="col-sm">
+                <button class="btn" id="precedent"><i class="bi bi-moon" id="icon"></i></button>
+            </div>
+            <div class="col-sm-9">
+                <!-- pour envoyer la liste au script avec données pour src et alt sous forme de json ici-->
+                <!-- if pour mettre une virgule entre chaque donnée sauf pour la dernière -->
+                <img src="/static/images/{{ liste_instru[0].image_instrument }}" id="imgCarrousel"
+                     alt="{{ liste_instru[0].reference_instrument }}" title="{{ liste_instru[0].nom_instrument }}"
+                     data-images='[
+                {% for instru in liste_instru %}
+                    {"src" : "/static/images/{{ instru.image_instrument }}", "alt": "{{ instru.reference_instrument }}", "title": "{{ instru.nom_instrument }}"}
+                    {% if not loop.last %},{% endif %}
+                {% endfor %}
+                ]'>
+            </div>
+            <div class="col-sm">
+                <button class="btn" id="suivant"><i class="bi bi-brightness-high" id="icon"></i></button>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

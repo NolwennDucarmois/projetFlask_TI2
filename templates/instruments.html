@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block content %}
-    <h2>Instruments de musique</h2>
+    <h2 id="titreInstru">Instruments de musique</h2>
     <!--<pre>
     {{ liste_instru }}
     </pre>-->
@@ -9,13 +9,13 @@
             {% for instru in liste_instru %}
             <div class="col">
                 <div class="card">
-                    <img src="/static/images/{{ instru.image_instrument }}" class="card-img-top" alt="{{instru.nom_instrument}}" id="img">
+                    <img src="/static/images/{{ instru.image_instrument }}" class="card-img-top mx-auto d-block" alt="{{instru.nom_instrument}}" id="img">
                     <div class="card-body">
                         <h5 class="card-title" id="nom">{{ instru.nom_instrument }}</h5>
                         <p class="card-text">
                             {{ instru.nom_marque }}
                         </p>
-                        <button>Plus d'infos</button>
+                        <button class="btn" id="btnPlusInfos"><a href="{{ url_for('infos') }}?id_instrument={{ instru.id_instrument }}" id="lienPlusInfos">Plus d'infos</a></button>
                     </div>
                 </div>
             </div>

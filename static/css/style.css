@@ -1,7 +1,90 @@
-h2{
-    color: rebeccapurple;
+#menu {
+    background: #dcc8fa;
 }
-#img{
+
+.contenu {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+#imgCarrousel {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 550px;
+}
+
+#icon {
+    font-size: 2.5rem;
+}
+
+#fleche {
+    background: black;
+}
+
+#gridCarrousel {
+    align-items: center;
+}
+
+#titreInstru {
+    color: #4f5b4a;
+    margin-bottom: 25px;
+}
+
+#img {
     width: 250px;
     height: 200px;
+}
+
+#btnPlusInfos {
+    float: right;
+}
+
+#lienPlusInfos {
+    text-decoration: none;
+    font-weight: bold;
+    color: #7837e8;
+}
+
+#lienRetour {
+    text-decoration: none;
+    color: black;
+}
+
+#nom_instrument_aff {
+    color: #4f5b4a;
+    font-size: 45px;
+    text-align: center;
+    margin-top: 15%;
+    margin-bottom: 5%;
+}
+
+#image_instrument_aff {
+    /* pour centrer au centre du bloc */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 850px;
+    margin-top: 80px;
+}
+
+#reference_instrument_aff, #marque_instrument_aff, #categorie_instrument_aff, #couleur_instrument_aff {
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+#reference_instrument_infos, #marque_instrument_infos, #categorie_instrument_infos, #couleur_instrument_infos {
+    font-size: 15px;
+    margin-left: 15px;
+}
+
+#prix_instrument_aff {
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
 }
