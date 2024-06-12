@@ -7,18 +7,22 @@
     <div class="container">
         <div class="row row-cols-1 row-cols-md-3 g-4">
             {% for instru in liste_instru %}
-            <div class="col">
-                <div class="card">
-                    <img src="/static/images/{{ instru.image_instrument }}" class="card-img-top mx-auto d-block" alt="{{instru.nom_instrument}}" id="img">
-                    <div class="card-body">
-                        <h5 class="card-title" id="nom">{{ instru.nom_instrument }}</h5>
-                        <p class="card-text">
+                <div class="col">
+                    <div class="card">
+                        <img src="/static/images/{{ instru.image_instrument }}" class="card-img-top mx-auto d-block"
+                             alt="{{ instru.nom_instrument }}" id="img">
+                        <div class="card-body">
+                            <h5 class="card-title" id="nom">{{ instru.nom_instrument }}</h5>
+                            <span class="card-text">
                             {{ instru.nom_marque }}
-                        </p>
-                        <button class="btn" id="btnPlusInfos"><a href="{{ url_for('infos') }}?id_instrument={{ instru.id_instrument }}" id="lienPlusInfos">Plus d'infos</a></button>
+                        </span>
+                            <button class="btn" id="btnPlusInfos"><a
+                                    href="{{ url_for('infos') }}?id_instrument={{ instru.id_instrument }}"
+                                    id="lienPlusInfos"><i class="bi bi-question-circle-fill" id="iconPlusInfos"></i></a>
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
             {% endfor %}
         </div>
     </div>

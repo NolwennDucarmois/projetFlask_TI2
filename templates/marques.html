@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h2 id="titreMarque">Marques d'instruments</h2>
+    <!--
+    <pre>
+    {{ marques }}
+    </pre>
+    -->
+    <div>
+        {% for marque in marques %}
+            <h4>{{ marque.nom_marque }}</h4>
+            <ul>
+                {% for instrument in marque.instruments %}
+                    <li>{{ instrument }}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </div>
+{% endblock content %}
